@@ -11,7 +11,7 @@ class Scheduler extends PluginTask{
         parent::__construct($plugin);
     }
 
-    public function onRun($currentTick){
+    public function onRun(int $currentTick){
         foreach($this->plugin->players as $player=>$time){
             if((time() - $time) > $this->plugin->interval){
                 $p = $this->plugin->getServer()->getPlayer($player);
